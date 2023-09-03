@@ -1,0 +1,496 @@
+:root {
+    --primary-color: #330910;
+    --secondary-color:#D67551;
+    --tertiary-color:#470C17;
+    --quaternary-color:#750019;
+    --quinary-color: #D42444;
+    --grey-color: #24242c;
+    --black-color: #000000;
+}
+
+
+.nav{
+    height: 5%;
+    align-content: center;
+}
+
+html {
+    font-family: Helvetica,Arial,sans-serif;
+    line-height: 1.5;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+    color: #22242e;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+a{
+    font-family: 'Jost', sans-serif;
+}
+
+.empty_text{
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Jost', sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px var(--grey-color); 
+    border-radius: 5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--tertiary-color); 
+    box-shadow: inset 0 0 10px var(--black-color); 
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+  }
+
+.grid-page{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    column-gap: 1vw;
+    row-gap: 1vh;
+    padding: 3%;
+    padding-bottom: 4%;
+    padding-right: 6%;
+}
+
+.page-main{
+    position: fixed;
+    width: 100%;
+    height: 95%;
+    background-color: var(--grey-color);
+}
+
+.vignette {
+    box-shadow: 0 0 100px var(--black-color) inset;
+  }
+
+.form{
+    padding-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.text-input{
+    width: 20vw;
+    background-color: var(--black-color);
+}
+.span-input{
+    width: 10vw;
+    background-color: var(--black-color);
+}
+
+.index-container
+{
+    border-radius: 1vmin;
+    box-shadow: 0 0 20px var(--quinary-color), inset 0 0 1000px var(--black-color);
+}
+
+.index-container:hover{
+    transform: scale(105%, 105%);
+    transition: transform 800ms cubic-bezier(.15,.85,0,.85);
+}
+.index-container:not(:hover){
+    transform: scale(100%, 100%);
+    transition: transform 800ms cubic-bezier(.15,.85,0,.85);
+}
+
+.calendar-content{
+    background-color: var(--grey-color);
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 2;
+}
+.workouts-content{
+    grid-column: 1 / span 3;
+    grid-row: 3 / span 2;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    row-gap: 5%;
+
+}
+.workouts-content .workout_container{
+    font-family: 'Jost', sans-serif;
+    text-align: center;
+    background-color: var(--grey-color);
+    border-radius: 5px;
+    outline: dotted var(--primary-color);
+    margin: 2%;
+}
+.workouts-content .workout_container h1{
+    font-family: 'Jost', sans-serif;
+    font-size: 1.5rem;
+}
+.workouts-content .workout_container h2{
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 100;
+    font-style: italic;
+}
+.workouts-content .workout_container p{
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    line-height: 0.2rem;
+}
+
+.stats-content{
+    grid-column: 1 / span 1;
+    grid-row: 1/ span 2;
+}
+
+.log-content{
+    
+    grid-column: 4 / span 1;
+    grid-row: 1 / span 4;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10%;
+    display: block;
+}
+.log-content .submission_container{
+    height: 30%;
+    border-radius: 5%;
+    background-color: var(--quaternary-color);
+    outline: dotted var(--black-color);
+    margin: 5%;
+    padding: 5%;
+}
+
+.log-content .submission_container h1{
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.log-content .submission_container p{
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+
+.main-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100vw;
+    padding: 5%;
+    font-family: 'Jost', sans-serif;
+}
+
+.log_page button{
+    font-family: 'Jost', sans-serif;
+}
+.log_page #workout_holder{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 5%;
+}
+.log_page_extra{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+}
+
+.form_popup{
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color-color);
+    opacity: 0;
+    z-index: 3;
+    border-radius: 3%;
+
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+.form_popup button{
+    width: 100%;
+}
+
+.form_popup div {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 50%;
+}
+.close_popup{
+    height: 5vh;
+}
+.form_popup form{
+    width: 100%;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+}
+
+.form_popup #close_form{
+    width: 100%;
+    background-color: var(--quinary-color);
+}
+
+.form_popup form button{
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+.form_popup #ADD_WORKOUT{
+    width: 20%;
+    background-color: var(--black-color);
+}
+.form_popup form button:hover{
+    transform: scale(110%, 110%);
+    color: var(--tertiary-color);
+    font-weight: bold;
+    transition: transform 1600ms cubic-bezier(.15,.85,0,.85);
+}
+
+.form_popup form button:not(:hover){
+    transform: scale(100%, 100%);
+    transition: transform 800ms cubic-bezier(.15,.85,0,.85);
+}
+
+.workout_holder{
+    width: 100%;
+    padding: 5%;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.workout_holder .workout_submit{
+    background-color: var(--primary-color)
+}
+
+.workoutTemplate{
+    display: grid;
+    background-color: var(--primary-color);
+    padding: 1%;
+    width: 100%;
+    max-height: 40vh;
+    height: 40vh;
+    grid-template-columns: 20% 20% auto 20% 20%;
+    grid-template-rows: 25% auto auto 25%;
+    gap: 10px;
+}
+.workoutTemplate .set_info{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--tertiary-color);
+    grid-column: 4 / span 2;
+    grid-row: 1 / span 5;
+    min-height: 0;
+}
+.workoutTemplate .set_info .set_holder{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: var(--grey-color);
+    height: 90%;
+    max-height: 90%;
+    padding: 10px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.workoutTemplate .set_info .set_holder .set{
+    display: flex;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 40px;
+    box-shadow: inset 0 0 10px var(--grey-color); 
+    justify-content: space-between;
+    padding-right: 3%;
+}
+
+.set_header{
+    display: flex;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 20px;
+    box-shadow: inset 0 0 10px var(--grey-color);
+    column-gap: 15%;
+    justify-content: space-around;
+}
+
+.set_header p{
+    font-family: 'Jost', sans-serif;
+}
+
+.set:hover{
+    
+    transform: scale(110%, 110%);
+    background-color: var(--quinary-color);
+    transition: transform 1600ms cubic-bezier(.15,.85,0,.85);
+}
+.set:not(:hover){
+    
+    transform: scale(100%, 100%);
+    background-color: var(--primary-color);
+    transition: transform 1600ms cubic-bezier(.15,.85,0,.85);
+}
+
+.set input{
+    width: 30%;
+}
+
+.delete_set{
+    height: 100%;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.delete_set:hover p{
+    display:none;
+}
+
+.delete_set:hover:before{
+    content: "✕";
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.set_info button:hover{
+    
+    transform: scale(105%, 105%);
+    background-color: var(--quinary-color);
+    transition: transform 1600ms cubic-bezier(.15,.85,0,.85);
+}
+.set_info button:not(:hover){
+    
+    transform: scale(100%, 100%);
+    background-color: var(--primary-color);
+    transition: transform 1600ms cubic-bezier(.15,.85,0,.85);
+}
+
+.workoutTemplate .workout_header{
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+}
+
+.delete_workout{
+    width: 100%;
+}
+.delete_workout:hover{
+    transform: scale(110%, 110%);
+    transition: transform 1600ms cubic-bezier(.15,.85,0,.85);
+    box-shadow: 0 0 50px inset var(--black-color)
+}
+.delete_workout:not(:hover){
+    transform: scale(100%, 100%);
+    transition: transform 1600ms cubic-bezier(.15,.85,0,.85);
+    box-shadow: 0 0 0
+}
+.delete_workout:hover h1{
+    display: none;
+}
+
+.delete_workout:hover h6{
+    display: none;
+}
+.delete_workout:hover:before{
+    content: "DELETE";
+    font-size: 3rem;
+    color: var(--quinary-color);
+    font-weight: bold;
+}
+
+
+.workoutTemplate .workout_header h1{
+    font-weight: bold;
+    font-size: 1.5rem;
+    height: 20;
+    font-family: 'Jost', sans-serif;
+}
+
+.workoutTemplate .workout_header h6{
+    font-size : 0.8rem;
+    font-weight: 100;
+    font-style: italic;
+    font-family: 'Jost', sans-serif;
+}
+
+
+.workoutTemplate .workout_notes{
+    background-color: var(--grey-color);
+    grid-column: 1 / span 1;
+    grid-row: 4 / span 2;
+}
+.notes{
+    width: 100%;
+    height: 100%;
+    resize: none;
+    overflow-y: auto;
+    font-family: 'Jost', sans-serif;
+    background-color: var(--grey-color);
+    padding: 5px;
+}
+.workoutTemplate .workout_chart{
+    background-color: var(--grey-color);
+    grid-column: 2  / span 2;
+    grid-row: 1 / span 5;
+    
+}
+.workoutTemplate .workout_stats{
+    background-color: var(--grey-color);
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 2;
+    padding: 10px;
+    overflow-y: auto;
+}
+.workout_stats p{
+    
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+}
+
+.workoutTemplate:hover{
+    transform: scale(110%, 110%);
+    transition: transform 1600ms cubic-bezier(.15,.85,0,.85);
+}
+
+.workoutTemplate:not(:hover){
+    transform: scale(100%, 100%);
+    transition: transform 1600ms cubic-bezier(.15,.85,0,.85);
+}
+

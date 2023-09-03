@@ -1,0 +1,48 @@
+{%extends "layout.html"%}
+
+{%block title%}
+    workout
+{%endblock%}
+
+{%block header%}
+    <script src="static/workout_log.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{%endblock%}
+
+{%block main%}
+    {%if custom_exercise_data or exercise_data%}
+        <div class="main-page vignette">
+            <form class="workout_holder" action = "/workout" method="post" > 
+                <div id = "infodiv"></div>
+                <input type="hidden" name="date" id = "date" value = "">
+                <button class="workout_submit btn" type="submit">SUBMIT WORKOUT</button>
+            </form action = "/workout" method="post">
+                <div class="log_page_extra">
+                    <button id=open_form class="open-button btn btn-danger">Add Exercise</button>
+                    <div id="form_popup" class="form_popup vignette">
+                        <button type="button" class="btn btn-danger close_popup" id="close_form">close </button>
+                            <div>
+                                <form>
+                                    <br>
+                                    <header>Workouts</header>
+                                    {%for data in exercise_data%}
+                                        <button type="button" class="btn btn-danger" id="{{data.name}}" data-type="{{data.type}}" data-muscle="{{data.primary_muscle}}">{{data.name}} | {{data.primary_muscle}}</button>
+                                    {%endfor%}
+
+                                    <br>
+                                    <br>
+                                    <header>Custom Workouts</header>
+                                    {%for data in custom_exercise_data%}
+                                        <button type="button" class="btn btn-danger" id="{{data.name}}" data-type="{{data.type}}" data-muscle="{{data.primary_muscle}}">{{data.name}} | {{data.primary_muscle}}</button>
+                                    {%endfor%}
+                                </form>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {%else%}
+        error when loading exercise database
+    {%endif%}
+
+{%endblock%}

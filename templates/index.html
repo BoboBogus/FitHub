@@ -1,0 +1,89 @@
+{%extends "layout.html"%}
+
+{%block title%}
+    home
+{%endblock%}
+
+{%block header%}
+<link rel="stylesheet" href="static/calendar.css">
+<script src="static/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{%endblock%}
+
+{%block main%}
+<!-- try to pass in sql database  -->
+
+    <div class="page-main grid-page vignette">
+
+        <div class="index-container calendar-container calendar-content">
+            <header class="calendar-header">
+                <p class="calendar-current-date"></p>
+                <div class="calendar-navigation">
+                    <span id="calendar-prev"
+                        class="material-symbols-rounded">
+                        chevron_left
+                    </span>
+                    <span id="calendar-next"
+                        class="material-symbols-rounded">
+                        chevron_right
+                    </span>
+                </div>
+            </header>
+    
+            <div class="calendar-body">
+                <ul class="calendar-weekdays">
+                    <li>Sun</li>
+                    <li>Mon</li>
+                    <li>Tue</li>
+                    <li>Wed</li>
+                    <li>Thu</li>
+                    <li>Fri</li>
+                    <li>Sat</li>
+                </ul>
+                <ul class="calendar-dates"></ul>
+            </div>
+        </div>
+
+
+        <div class="index-container workouts-content">
+            {%if workout_max%}
+                {%for wk in workout_max%}
+                <div class="workout_container">
+                  <canvas id = "workout-canvas" data-x="{{workouts[wk.id].date}}" data-y="{{workouts[wk.id].max}}" data-type="{{wk.type}}" data-title="Maximum Over Time"></canvas>
+
+                    <!-- all canvas header -->
+                    <h1>{{wk.name}}</h1>
+                    <h2>{{wk.muscle}} | {{wk.type}}</h2>
+                    <br>
+                    {%if wk.type == "Weight Reps" %}
+                      <p>One Rep Max: {{wk.max}}</p>
+                      <p>Hightest Intensity Set: weight - {{wk.data1}}, reps - {{wk.data2}},</p>
+                    {%elif wk.type == "Bodyweight Reps"%}
+                      <p>Greatest Intensity Set: reps - {{wk.max}}</p>
+                    {%elif wk.type == "Duration" %}
+                      <p>Greatest Intensity Set: duration - {{wk.max}}</p>
+                    {%endif%}
+                    <p>Date Achieved: {{wk.date}}</p>
+                </div>
+                {%endfor%}
+            {%else%}
+            <br>
+            <p class ="empty_text">START LOGGING DATA</p>
+            {%endif%}
+        </div>
+        <div class="index-container stats-content">
+          <canvas id="radar-canvas" data-data="{{muscle_usage}}"></canvas>
+        </div>
+        <div class="index-container log-content">
+          {%for submission in submissions%}
+            <div class="submission_container">
+              <h1>{{submission.date}}<h2>
+                <p>Total Weight Lifted: {{submission.collective_weight}}</p>
+                <p>Total Reps: {{submission.collective_reps}}</p>
+                <p>Total Duration in Duration workouts: {{submission.collective_duration}}</p>
+            </div>
+          {%endfor%}
+        </div>
+
+    </div>
+{%endblock%}

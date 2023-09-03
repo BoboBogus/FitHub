@@ -1,0 +1,28 @@
+{%extends "layout.html"%}
+
+{%block title%}
+    create workout
+{%endblock%}
+
+{%block main%}
+    <div class="main-page">
+        <form action="/create_workout" method="post">
+            <input name="name" class="form-control" type="text", placeholder="insert workout name"> 
+            <br>
+            <p>Select Muscle</p>
+            {%for muscle in muscles%}
+                <input name="muscle" class="form-check-input" type="radio" value="{{muscle}}"> 
+                <label for="{{muscle}}">{{muscle}}</label><br>
+            {%endfor%}
+            <br>
+            <p>Select Workout Type</p>
+            {%for type in types%}
+                <input name="type" class="form-check-input" type="radio" value="{{type}}"> 
+                <label for="{{type}}">{{type}}</label><br>
+            {%endfor%}
+            <br>
+            <button type="submit" class="btn btn-danger">CREATE WORKOUT</button>
+        </form>
+    </div>
+    
+{%endblock%}

@@ -1,0 +1,13 @@
+<div class="set" id="set{{id}}">
+    <button type="button" class="btn delete_set" data-id="{{id}}" data-workoutid="{{exercise_id}}" onclick="deleteSet(this.dataset.id, this.dataset.workoutid)">
+        <p>{{id}}</p>
+    </button>
+    <!-- data1 = duration TODO: convert in to time format -->
+    {%if data1%}
+        <input type="text" name = "{{exercise_id}}_set{{id}}_data1" placeholder="{{data1}}">
+    {%else%}
+        <input type="text" name = "{{exercise_id}}_set{{id}}_data1" placeholder="00:00:00">
+    {%endif%}
+</div>
+<div id="set_placeholder">
+</div>

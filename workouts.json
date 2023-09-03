@@ -1,0 +1,89 @@
+{
+  "workouts": [
+    {
+      "name": "Abdominal Crunches",
+      "primary_muscle": "Abdominals",
+      "type": "Weight Reps"
+    },
+    {
+      "name": "Squat Jumps",
+      "primary_muscle": "Quadriceps",
+      "type": "Bodyweight Reps"
+    },
+    {
+      "name": "Hip Adductor Machine",
+      "primary_muscle": "Adductors",
+      "type": "Weight Reps"
+    },
+    {
+      "name": "Bicep Curls",
+      "primary_muscle": "Biceps",
+      "type": "Weight Reps"
+    },
+    {
+      "name": "Calf Raises",
+      "primary_muscle": "Calves",
+      "type": "Weight Reps"
+    },
+    {
+      "name": "Treadmill Running",
+      "primary_muscle": "Cardio",
+      "type": "Duration"
+    },
+    {
+      "name": "Bench Press",
+      "primary_muscle": "Chest",
+      "type": "Weight Reps"
+    },
+    {
+      "name": "Wrist Curls",
+      "primary_muscle": "Forearms",
+      "type": "Weight Reps"
+    },
+    {
+      "name": "Squats",
+      "primary_muscle": "Quadriceps",
+      "type": "Weight Reps"
+    },
+    {
+      "name": "Hamstring Curls",
+      "primary_muscle": "Hamstrings",
+      "type": "Weight Reps"
+    },
+    {
+      "name": "Lat Pulldowns",
+      "primary_muscle": "Lats",
+      "type": "Weight Reps"
+    },
+    {
+      "name": "Deadlifts",
+      "primary_muscle": "Lower Back",
+      "type": "Weight Reps"
+    },
+    {
+      "name": "Leg Press",
+      "primary_muscle": "Quadriceps",
+      "type": "Weight Reps"
+    },
+    {
+      "name": "Shoulder Press",
+      "primary_muscle": "Shoulders",
+      "type": "Weight Reps"
+    },
+    {
+      "name": "Barbell Shrugs",
+      "primary_muscle": "Traps",
+      "type": "Weight Reps"
+    },
+    {
+      "name": "Tricep Dips",
+      "primary_muscle": "Triceps",
+      "type": "Weight Reps"
+    },
+    {
+      "name": "Pull-ups",
+      "primary_muscle": "Upper Back",
+      "type": "Bodyweight Reps"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+<div class="workoutTemplate vignette" id="exercise{{id}}">
+    <div class="workout_header">
+        <button type="button" class ="delete_workout btn" data-id="exercise{{id}}" onclick ="deleteWorkout(this.dataset.id)">
+            <h1>{{workout}}</h1>
+            <h6>{{muscle}} | {{type}}<h6>
+        </button>
+    </div>
+    
+    <div class="workout_chart vignette">{%block chart%}{%endblock%}</div>
+    <div class="workout_stats vignette">{%block stats%}{%endblock%}</div>
+
+    <div class="workout_notes vignette">
+        <textarea class="notes" name ="notes" value ="exercise{{id}}"placeholder="{{notes}}"></textarea>
+    </div>
+
+    <div class = "set_info vignette">
+        {%block set_log%}{%endblock%}
+    </div>
+<input type="hidden" name="key" value="{{workout}}_exercise{{id}}">
+</div>
+<!-- map exercise id to workout for db -->
+<div id = "infodiv">
+
+</div>

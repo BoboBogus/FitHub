@@ -1,0 +1,13 @@
+<div class="set" id="set{{id}}">
+    <button type="button" class="btn delete_set" data-id="{{id}}" data-workoutid="{{exercise_id}}" onclick="deleteSet(this.dataset.id, this.dataset.workoutid)">
+        <p>{{id}}</p>
+    </button>
+
+    {%if data2%}
+        <input type="number" name = "{{exercise_id}}_set{{id}}_data2" placeholder ="{{data2}}">
+    {%else%}
+        <input type="number" name = "{{exercise_id}}_set{{id}}_data2" placeholder="0">
+    {%endif%}
+</div>
+<div id="set_placeholder">
+</div>

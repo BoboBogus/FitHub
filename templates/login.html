@@ -1,0 +1,27 @@
+{%extends "layout.html"%}
+
+{%block title%}
+    login
+{%endblock%}
+
+
+{%block main%}
+    <div class="form">
+        <form action="/login" method="post">
+            <div class="input-group mb-3 ">
+                <span class="input-group-text span-input" id="addon-wrapping">Username</span>
+                <input class="input-group-text text-input" type="text" name="username">
+            </div>
+            <div class="input-group mb-3">
+                
+                <span class="input-group-text span-input" id="addon-wrapping">Password</span>
+                <input class="input-group-text text-input" type="password" name="password">
+            </div>
+            <div>
+                <button class = "btn btn-danger" type="submit">
+                    Log In
+                </button>
+            </div>
+        </form>
+    </div>
+{%endblock%}
